@@ -32,7 +32,7 @@ ReactIntlAggregatePlugin.prototype.apply = function (compiler) {
             throw new Error(`Duplicate message id: ${id}`);
           }
           collection[id] = {};
-          collection[id]["defaultMessage"] = defaultMessage;
+          collection[id]["defaultMessageTEST"] = defaultMessage;
           if (description) {
             collection[id].description = description;
           }
