@@ -31,11 +31,7 @@ ReactIntlAggregatePlugin.prototype.apply = function (compiler) {
           if (collection.hasOwnProperty(id)) {
             throw new Error(`Duplicate message id: ${id}`);
           }
-          collection[id] = {};
-          collection[id]["defaultMessageTEST"] = defaultMessage;
-          if (description) {
-            collection[id].description = description;
-          }
+          collection[id] = defaultMessage;
         });
         return collection;
       }, {});
