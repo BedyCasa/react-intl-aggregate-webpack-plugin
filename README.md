@@ -1,4 +1,4 @@
-# react-intl-aggregate-webpack-plugin
+# react-intl-aggregate-flat-webpack-plugin
 
 Small webpack plugin designed to take the output from `babel-plugin-react-intl` and aggregate it into one file.
 An error will be thrown if there are messages in different components that use the same `id`.
@@ -7,17 +7,14 @@ It will output code that looks like:
 
 ```json
 {
-  "some-translation-id" : {
-    "defaultMessage" : "I am a message",
-    "description"    : "I am a description that helps translators"
-  }
+  "hello_world": "Bonjour Monde"
 }
 ```
 
 ## Installation
 
 ```sh
-$ npm install react-intl-aggregate-webpack-plugin
+$ npm install react-intl-aggregate-flat-webpack-plugin
 ```
 
 ## Usage
@@ -25,14 +22,14 @@ $ npm install react-intl-aggregate-webpack-plugin
 In your webpack config file:
 
 ```javascript
-var ReactIntlAggregatePlugin = require('react-intl-aggregate-webpack-plugin');
+var ReactIntlAggregateFlatPlugin = require('react-intl-aggregate-flat-webpack-plugin');
 var I18N_DIR                 = '../../i18n/';
 ...
 var config = {
   ...
   plugins: [
     ...
-    new ReactIntlAggregatePlugin({
+    new ReactIntlAggregateFlatPlugin({
       messagesPattern: I18N_DIR + 'messages/**/*.json',
       aggregateOutputDir: I18N_DIR + 'aggregate/',
       aggregateFilename: 'en-US'
